@@ -572,6 +572,8 @@ echo "$pwyDB" > $pwyDBfile
 
 Rscript $dir/prepare_batch_alignments.R $pwyDBfile $database $taxonomy $seqSrc $force_offline $update_manually $use_gene_seq $n_threads $verbose $onlyList $seqdb
 # the final reference sequences are stored by the above R-script in "query.faa"
+# 
+cp query.faa "${output_dir}/${fastaID}-${output_suffix}-reference-query.faa"
 
 [[ $onlyList == true ]] && exit 0
 
